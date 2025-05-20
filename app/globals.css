@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 33% 98%;
+    --foreground: 260 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 3.9%;
+
+    --primary: 265 92% 57%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 260 4.8% 95.9%;
+    --secondary-foreground: 260 5.9% 10%;
+
+    --muted: 260 4.8% 95.9%;
+    --muted-foreground: 260 3.8% 46.1%;
+
+    --accent: 265 83% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 5.9% 90%;
+    --input: 260 5.9% 90%;
+    --ring: 265 92% 57%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 260 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 265 92% 57%;
+    --primary-foreground: 260 5.9% 10%;
+
+    --secondary: 260 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 260 3.7% 15.9%;
+    --muted-foreground: 260 5% 64.9%;
+
+    --accent: 265 83% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 3.7% 15.9%;
+    --input: 260 3.7% 15.9%;
+    --ring: 265 92% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Apple-inspired styles */
+.apple-card {
+  @apply rounded-2xl shadow-sm border bg-card/80 backdrop-blur-md transition-all duration-300;
+}
+
+.apple-card:hover {
+  @apply shadow-md transform scale-[1.01];
+}
+
+.apple-button {
+  @apply rounded-full bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-300;
+}
+
+.apple-button:hover {
+  @apply transform scale-[1.02];
+}
+
+.apple-button:active {
+  @apply transform scale-[0.98];
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improved focus styles */
+:focus {
+  @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Improved transitions */
+.transition-apple {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Logo styles */
+.logo-text {
+  @apply font-bold tracking-tight;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Landing page animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float 4s ease-in-out infinite;
+}
